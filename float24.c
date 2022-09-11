@@ -168,7 +168,7 @@ Float24_t* float24_arrayMax(Float24_t* array, size_t size, void (*func)(Float24_
     // Ensures code does not loop if the size of the array is 1
     if(size > 1) {
         for(int16_t index = 1; index < size; index ++) {
-            float24_max(largest_num, &array[index], &largest_num);
+            func(largest_num, &array[index], &largest_num);
         }
     }
     return largest_num;
