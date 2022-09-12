@@ -9,14 +9,20 @@
 
 int main()
 {
-    Float24_t new_float;
+    Float24_t new_float = {0, 0};
     Float24_t float_array[400];
     size_t array_size = 0;
-    while((new_float.exponent != -128 && new_float.mantissa != 0) && array_size < 100) { 
+    bool exit_loop = false;
+    do { 
         new_float = float24_read();
         float_array[array_size] = new_float;
         array_size++;
-    }
+        exit_loop = (new_float.exponent == -128 && new_float.mantissa == 0) ? false : true;
+        if (array_size >= 100) {
+            exit_loop = false;
+            array_size++;
+        }
+    } while(exit_loop == true);
 
     array_size -= 1;
 
