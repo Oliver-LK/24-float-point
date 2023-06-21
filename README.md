@@ -1,4 +1,10 @@
-# 24-float-point
+# About
 
-A C program stores a 24 bit float data type with basic functions associated with it.
-float24.c and h contain all the functions, and main.c has some testing cases.
+ENCE260 project that defines 24 bit float data type inside C. Modules could be implemented to MCU without an FPU.
+Supported operations include:
+ - Addition
+ - Multiplication
+ - User input
+ - Max in array
+
+
